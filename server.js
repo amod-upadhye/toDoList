@@ -8,3 +8,11 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var tasks = require('./routes/tasks');
+
+// Initialize Express for the app
+var app = express();
+
+// Set Views Engine
+app.set('views',path.join('__dirname,'views'));
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').render); // Parse HTML
