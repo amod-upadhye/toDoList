@@ -23,3 +23,14 @@ app.use(express.static(path.join('__dirname','client')));
 //Body parser MiddleWare
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
+
+//Set Routes
+app.use('/',index);
+app.use('/api',tasks);
+
+//Listen to server on port
+var port = 8080;
+app.listen(port, function()
+				{console.log("server started on port "+ port);
+				}
+				);
