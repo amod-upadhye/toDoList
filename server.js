@@ -16,3 +16,10 @@ var app = express();
 app.set('views',path.join('__dirname,'views'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').render); // Parse HTML
+
+//set Static folder
+app.use(express.static(path.join('__dirname','client')));
+
+//Body parser MiddleWare
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
