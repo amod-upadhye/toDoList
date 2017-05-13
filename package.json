@@ -11,5 +11,8 @@
     "demo"
   ],
   "author": "Amod Upadhye",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
