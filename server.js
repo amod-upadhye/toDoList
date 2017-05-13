@@ -15,7 +15,7 @@ var app = express();
 // Set Views Engine
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
-app.engine('html', require('ejs').render); // Parse HTML
+app.engine('html', require('ejs').renderFile); // Parse HTML
 
 //set Static folder
 app.use(express.static(path.join('__dirname','client')));
