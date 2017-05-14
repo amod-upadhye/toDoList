@@ -18,7 +18,9 @@ app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile); // Parse HTML
 
 //set Static folder
-app.use(express.static(path.join('__dirname','client')));
+app.use(express.static(path.join(__dirname,'client')));
+//Testing the use of latest angular release
+
 
 //Body parser MiddleWare
 app.use(bodyParser.json());
@@ -28,6 +30,9 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use('/',index);
 app.use('/api',tasks);
 
+app.post('/task', (req, res) => {
+  console.log('Hellooooooooooooooooo!');
+})
 //Listen to server on port
 var port = 8080;
 app.listen(port, function()
