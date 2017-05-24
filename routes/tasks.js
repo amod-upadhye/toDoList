@@ -42,7 +42,7 @@ router.post('/task', function(req,res,next){
 	var task = req.body;
 	
 	// check if task is valid 
-	if(!task.title || (task.isDone + '')){
+	if(!task.title || !(task.isDone + '')){
 		res.status(400);
 		res.json({
 			"error" : "Bad Data"

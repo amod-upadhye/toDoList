@@ -18,4 +18,13 @@ export class TaskService{
 
         
     }
+
+    //function to add a Task
+    addTask(newTask){
+        var headers = new Headers();
+
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('http://localhost:8080/api/task', JSON.stringify(newTask), {headers: headers})
+            .map(res => res.json()); //Mapped Output to JSON
+    }
 }

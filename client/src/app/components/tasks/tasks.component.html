@@ -1,18 +1,22 @@
-<form class="well">
+<form class="well" (submit)="addTask($event)">
     <div class="form-group">
-        <input class="form-control" type="text" placeholder="Add a Task ...">
+        <input class="form-control" type="text" placeholder="Add a Task ..." [(ngModel)]="title" name="title">
+        <textarea class="form-control" type="text" rows="3" placeholder="Add an Optional Description ..." [(ngModel)]="description" name="description"></textarea>
     </div>
 </form>
 
 <h2>All Tasks</h2>
 <div class="tasks-list">
     <!-- ngFor : Angular For Loop -->
-    <div *ngFor="let task of tasks">
+    <div *ngFor="let task of tasks" class="row">
         <div class="col-md-1">
             <input type="checkbox">
         </div>
         <div class="col-md-7">
             {{task.title}}
+            <div class="text-muted">
+                {{task.description}}
+            </div>
         </div>
         <div class="col-md-4">
             <input type="button" class="btn btn-danger" value="Delete">
