@@ -9,5 +9,11 @@ import {TaskService} from '../../services/tasks.service';
 export class TasksComponent  {
 
   //add constructor with a call to taskService
-  constructor(private taskService:TaskService){}
+  constructor(private taskService:TaskService){
+    //Subscribe tasks from observables
+    taskService.getTasks().subscribe(tasks =>{
+      //capture tasks onto console
+      console.log(tasks);
+    });
+  }
  }

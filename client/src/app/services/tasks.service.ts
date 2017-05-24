@@ -9,4 +9,13 @@ export class TaskService{
     constructor(private http:Http){
         console.log('Task Service initialized ...');
     }
+
+    //function for GET request to API
+    getTasks(){
+        //returns an HTTP GET request
+        return this.http.get('http://localhost:8080/api/tasks')
+        .map(res => res.json()); //capture response as JSON in MAP
+
+        
+    }
 }
