@@ -6,13 +6,16 @@
 
 <h2>All Tasks</h2>
 <div class="tasks-list">
-    <div class="col-md-1">
-        <input type="checkbox">
-    </div>
-    <div class="col-md-7">
-        Task Name
-    </div>
-    <div class="col-md-4">
-        <input type="button" class="btn btn-danger" value="Delete">
+    <!-- ngFor : Angular For Loop -->
+    <div *ngFor="let task of tasks">
+        <div class="col-md-1">
+            <input type="checkbox">
+        </div>
+        <div class="col-md-7">
+            {{task.title}}
+        </div>
+        <div class="col-md-4">
+            <input type="button" class="btn btn-danger" value="Delete">
+        </div>
     </div>
 </div>
